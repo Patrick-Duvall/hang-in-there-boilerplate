@@ -171,7 +171,6 @@ function getRandomElement(array) {
 }
 
 function setPoster() {
-  console.log('!!!!');
   html = `
   <article class="poster">
     <img class="poster-img" src="${currentPoster.imageURL}" alt="nothin' to see here">
