@@ -157,7 +157,6 @@ function savePoster() {
 
 function updateMainPoster() {
   currentPoster = createRandomPoster()
-  debugger
   displayCurrentPoster()
 }
 
@@ -182,7 +181,6 @@ function getRandomElement(array) {
 }
 
 function displayCurrentPoster() {
-  debugger
   html = `
   <article class="poster">
     <img class="poster-img" src="${currentPoster.imageURL}" alt="nothin' to see here">
