@@ -127,7 +127,6 @@ showSavedButton.addEventListener('click', showSavedPosters)
 showFormButton.addEventListener('click', showPosterForm)
 makePosterButton.addEventListener('click', makePoster)
 savePosterButton.addEventListener('click', savePoster)
-// savedPostersGrid.addEventListener('dblclick', deleteSavedPoster)
 
 for( let i = 0; i < showMainButtons.length; i++ ){
   showMainButtons[i].addEventListener('click', showMainPoster)
