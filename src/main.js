@@ -157,6 +157,7 @@ function savePoster() {
 
 function updateMainPoster() {
   currentPoster = createRandomPoster()
+  debugger
   displayCurrentPoster()
 }
 
@@ -181,6 +182,7 @@ function getRandomElement(array) {
 }
 
 function displayCurrentPoster() {
+  debugger
   html = `
   <article class="poster">
     <img class="poster-img" src="${currentPoster.imageURL}" alt="nothin' to see here">
@@ -193,12 +195,12 @@ function displayCurrentPoster() {
 
 function displaySavedPosters() {
   html = ''
-  for(poster in savedPosters){
+  for(i in savedPosters){
     html += `
     <article class="mini-poster">
-      <img class="poster-img" src="${savedPosters[poster].imageURL}" alt="nothin' to see here">
-      <h2 class="poster-title">${savedPosters[poster].title}</h1>
-      <h4 class="poster-quote">${savedPosters[poster].quote}</h3>
+      <img class="poster-img" src="${savedPosters[i].imageURL}" alt="nothin' to see here">
+      <h2 class="poster-title">${savedPosters[i].title}</h1>
+      <h4 class="poster-quote">${savedPosters[i].quote}</h3>
     </article>
     `
   }
