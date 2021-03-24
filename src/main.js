@@ -162,8 +162,20 @@ function updateMainPoster() {
 
 function showSavedPosters() {
   displaySavedPosters()
+  addDeleteEventListenersToMiniPosters()
   savedPostersPage.classList.remove('hidden')
   mainPoster.classList.add('hidden')
+}
+
+function addDeleteEventListenersToMiniPosters() {
+  let miniPosters = document.querySelectorAll('.mini-poster')
+  for( let i = 0; i < miniPosters.length; i++){
+    miniPosters[i].addEventListener('dblclick', function(){
+      savedPosters = savedPosters.filter(poster => poster.id !== parseInt(this.id))
+      displaySavedPosters()
+      addDeleteEventListenersToMiniPosters()
+    })
+  }
 }
 
 function showPosterForm() {
@@ -195,7 +207,7 @@ function displaySavedPosters() {
   html = ''
   for(i in savedPosters){
     html += `
-    <article class="mini-poster">
+    <article class="mini-poster" id=${savedPosters[i].id}>
       <img class="poster-img" src="${savedPosters[i].imageURL}" alt="nothin' to see here">
       <h2 class="poster-title">${savedPosters[i].title}</h1>
       <h4 class="poster-quote">${savedPosters[i].quote}</h3>
