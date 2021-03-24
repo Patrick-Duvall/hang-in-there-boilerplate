@@ -117,6 +117,8 @@ var showMainButtons = document.querySelectorAll('.show-main')
 var makePosterButton = document.querySelector('.make-poster')
 var savePosterButton = document.querySelector('.save-poster')
 
+var savedPostersGrid = document.querySelector('.saved-posters-grid')
+
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 
@@ -159,6 +161,7 @@ function updateMainPoster() {
 }
 
 function showSavedPosters() {
+  displaySavedPosters()
   savedPostersPage.classList.remove('hidden')
   mainPoster.classList.add('hidden')
 }
@@ -186,4 +189,18 @@ function displayCurrentPoster() {
   </article>
   `
   poster.innerHTML = html
+}
+
+function displaySavedPosters() {
+  html = ''
+  for(poster in savedPosters){
+    html += `
+    <article class="mini-poster">
+      <img class="poster-img" src="${savedPosters[poster].imageURL}" alt="nothin' to see here">
+      <h2 class="poster-title">${savedPosters[poster].title}</h1>
+      <h4 class="poster-quote">${savedPosters[poster].quote}</h3>
+    </article>
+    `
+  }
+  savedPostersGrid.innerHTML = html
 }
